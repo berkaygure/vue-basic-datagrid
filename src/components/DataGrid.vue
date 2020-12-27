@@ -88,12 +88,14 @@ export default {
         let sortResult = 0;
         for(const sort of this.sorters) {
           if(sortResult === 0) {
+            let currValue = curr[sort.column];
+            let nextValue = next[sort.column];
+            if(!['number', 'date'].includes(typeof currValue)) currValue.toString();
+            if(!['number', 'date'].includes(typeof nextValue)) nextValue.toString();
             if(typeof sort.sorter === 'function') {
               // Supports for customer comperer
-              sortResult = sort.compare(curr, next);
+              sortResult = sort.sorter(currValue, nextValue, sort.direction);
             }else {
-              const currValue = curr[sort.column].toString();
-              const nextValue = next[sort.column].toString();
               sortResult = sort.direction * (currValue < nextValue ? -1 : (currValue > nextValue ? 1 : 0));
             } 
           }
@@ -163,7 +165,7 @@ export default {
       const sorterColumn = this.sorters.find(c => c.column === column.key);
       const newSortColumn = {
           column: column.dataIndex,
-          sorter: column.sorter,
+          sorter: column.compare,
           direction: SortDirection.Asc
       }
       if(sorterColumn) {
