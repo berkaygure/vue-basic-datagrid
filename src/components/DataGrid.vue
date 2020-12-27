@@ -104,22 +104,15 @@ export default {
   },
   methods: {
     onDrop (e, droppedCol) {
-      this.cols = this.cols.map((column) => {
-        const updatedCol = {
-          ...column,
-          className: '',
-        }
-        
-        if(this.draggingCol.key === column.key) {
-          updatedCol.order = droppedCol.order;
-        }
+      const draggingColumnIndex = this.cols.findIndex(x => x.key === this.draggingCol.key);
+      const droppedColumnIndex = this.cols.findIndex(x => x.key === droppedCol.key);
+      const otherColumns =  this.cols.filter((item, index) => index !== draggingColumnIndex).map(x => ({...x, className:''}));
 
-        if(column.key === droppedCol.key) {
-          updatedCol.order = this.draggingCol.order;
-        }
-
-        return updatedCol;
-      });
+       this.cols = [
+         ...otherColumns.slice(0, droppedColumnIndex),
+         {...this.draggingCol, order: droppedCol.order, className:'' },
+         ...otherColumns.slice(droppedColumnIndex),
+       ]
 
       this.draggingCol = null;
     },
