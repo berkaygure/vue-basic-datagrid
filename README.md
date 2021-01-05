@@ -22,6 +22,9 @@ yarn add vue-basic-datagrid
 ```
 
 ```javascript
+import DataGrid from 'vue-basic-datagrid'
+import 'vue-basic-datagrid/dist/vue-basic-datagrid.css'
+
 const getDate = (dateStr) => { 
   return new Date(Date.parse(dateStr));
 }
