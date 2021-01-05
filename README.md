@@ -1,8 +1,8 @@
-# vue-datagrid-case-study
-A basic data-grid for case-study.
+# vue-basic-datagrid
+A basic data-grid.
 
 ## Features
-- Drag-drop column order
+- Drag-drop column order (with HTML5)
 - Multiple sorter (with shift-key)
 ## Install Dependencies
 ```
