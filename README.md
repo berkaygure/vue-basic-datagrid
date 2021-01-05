@@ -19,8 +19,11 @@ yarn add vue-basic-datagrid
 </template>
 ```
 
-
 ```javascript
+const getDate = (dateStr) => { 
+  return new Date(Date.parse(dateStr));
+}
+
 export default {
   name: 'app',
   data: () => {
