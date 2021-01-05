@@ -1,14 +1,14 @@
 {
-  "name": "vue-basic-data-grid",
-  "version": "0.1.0",
-  "private": true,
-  "description": "Basic data grid for demo",
-  "main": "./dist/vue-datagrid.common.js",
+  "name": "vue-basic-datagrid",
+  "version": "1.0.3",
+  "private": false,
+  "description": "Basic data grid",
+  "main": "./dist/vue-basic-datagrid.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build-lib": "vue-cli-service build --target lib --name vue-datagrid src/main.js"
+    "build-lib": "vue-cli-service build --target lib --name vue-basic-datagrid src/main.js"
   },
   "dependencies": {
     "core-js": "^2.6.5",
@@ -45,5 +45,12 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
+  ],
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js"
   ]
 }
