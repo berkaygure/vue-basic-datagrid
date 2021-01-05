@@ -1,6 +1,10 @@
 # Vue Basic Datagrid
 A basic data-grid.
 
+## Demo
+
+[Live Demo](https://vue-data-grid-case-study.vercel.app)
+
 ## Features
 - Drag-drop column order (with HTML5)
 - Multiple sorter (with shift-key)
