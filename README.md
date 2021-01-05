@@ -1,6 +1,8 @@
 # Vue Basic Datagrid
 A basic data-grid.
 
+<img alt="Vue Basic Datagrid" src="https://i.ibb.co/d0y7fZS/Screen-Shot-2021-01-05-at-11-01-44.png" height="300" width="500"/>
+
 ## Demo
 
 [Live Demo](https://vue-data-grid-case-study.vercel.app)
